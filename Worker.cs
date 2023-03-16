@@ -41,7 +41,7 @@ namespace WorkAccionesBBVA
                         "'006'," +
                         "'016'" +
                         ")" +
-                        "and er.fechaCreacion Between '2023-01-22 00:00:00' and '2023-01-24 00:00:00' " +
+                        "and er.fechaCreacion Between '2020-01-08 00:00:00' and '2022-12-09 00:00:00' " +
                         "and ER.Respuesta IN (" +
                         "4" +
                         ")" +
@@ -50,6 +50,7 @@ namespace WorkAccionesBBVA
                         "er.observaciones like 'El estado del envio no permite realizar la operación. Envío en estado final. Estado: 6' " +
                         "OR  er.observaciones like 'El estado del envio no permite realizar la operación. Envío en estado final. Estado: 7' " +
                         "OR  er.observaciones like 'El estado del envio no permite realizar la operación. Envío en estado final. Estado: 8'" +
+                        "OR  er.observaciones like 'No se pudo hallar el objeto: EntityNumber con identificador: G00000576967660'" +
                         ") " +
                         "AND not exists (" +
                         "select 1 from AccionesBBVA..EntradaRegistros (nolock) ER2 " +
@@ -60,7 +61,7 @@ namespace WorkAccionesBBVA
                         "and er.fechaCreacion < er2.fechaCreacion " +
                         "and er.id <> er2.id" +
                         ")";
-                    string connectionString = @"Data Source=ITGDCSRV2.andreani.com.ar;Initial catalog=AccionesBBVA;Integrated Security=true";
+                    string connectionString = @"Data Source=ITGTESTDCSRV1.andreani.com.ar;Initial Catalog=AccionesBBVA;Persist Security Info=True;User ID=Andreani_test;Password=cualquiercosa";
                     DataTable dt = new DataTable();
                     int rows_returned;
 
